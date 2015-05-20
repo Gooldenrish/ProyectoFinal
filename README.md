@@ -1,2 +1,2 @@
 # ProyectoFinal
-By Gooldenrish
+Carlos Isaac RG

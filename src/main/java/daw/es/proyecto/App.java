@@ -27,9 +27,13 @@ public class App {
         get(new FreeMarkerRoute("/") {
             @Override
             public ModelAndView handle(Request request, Response response) {
-                return modelAndView(null, "Libreria.ftl");
+                return modelAndView(null, "listaUsuarios.ftl");
             }
         });
 
     }
+    
+    
+    
+   
 }

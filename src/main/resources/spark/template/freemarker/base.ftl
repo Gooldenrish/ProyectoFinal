@@ -12,6 +12,7 @@
     <html>
     <head>
         <title><@title/></title>
+         <link rel="icon" type="image/png" href="/image/favicon.png"/>
         <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen" />
        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet" media="screen">
     </head>

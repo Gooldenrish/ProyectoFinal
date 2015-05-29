@@ -1,4 +1,4 @@
-package spark;
+package Main;
  
 public class User {
         private String	firstname;

@@ -1,10 +1,9 @@
 body, input {
 	background-image: URL('http://www.technik-didaktik.com/wp-content/uploads/2014/12/Cloudy-Day-Simple.png');
-        font-family: Calibri, Arial;
         margin: 0px;
         padding: 0px;
 }
-#header h2 {
+#header h2 { font-family: monospace;
         color: white;
         background-color: #00BFFF;
         height: 50px;
@@ -13,11 +12,11 @@ body, input {
 
 
 #footer p{color: white; font-size: large; text-align: center;
-	background-color: #00BFFF;
+	background-color: #00BFFF; font-family: cursive;
 }
+ 
 
-
-#header p {   color: white; font-size: large;
+#header p {   color: white; font-size: large;  font-family: sans-serif;
         background-color: #00BFFF;
   animation-duration: 3s;
   animation-name: slidein;

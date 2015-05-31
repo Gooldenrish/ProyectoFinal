@@ -1,9 +1,9 @@
 <#macro title>
-  Base Page Title
+  Developer Console
 </#macro>
 
 <#macro content>
-  Here goes content
+
 </#macro>
 
 

@@ -19,7 +19,7 @@ public class MongoBD {
 
     public static ArrayList getAllDocuments() {
         ArrayList<Obj_app> arrayl = new ArrayList();
-        MongoCursor<Document> cursor = collection.find().iterator();
+        MongoCursor<Document> cursor = collection.find().limit(20).iterator();
         try {
             while (cursor.hasNext()) {
                 arrayl.add(App(cursor.next()));

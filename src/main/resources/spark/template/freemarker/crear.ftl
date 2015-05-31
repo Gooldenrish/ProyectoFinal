@@ -2,10 +2,9 @@
 
 <#macro content>
  
-  <fieldset>
-        <legend>Nueva Aplicacion</legend>
 
-<form class="form-horizontal" name="agregar" action="add" method="post">
+
+<form class="form-horizontal" name="agregar" action="add" method="post" onsubmit="return formulario(this)">
     <div class="form-group">
         <label class="control-label col-xs-3">Titulo:</label>
         <div class="col-xs-9">
@@ -44,7 +43,7 @@
             <div class="form-group">
         <label class="control-label col-xs-3">Precio</label>
         <div class="col-xs-9">
-            <input type="text" name="precio" class="form-control" placeholder="Nombre de la app">
+            <input type="text" name="precio" class="form-control" onkeyUp="return ValNumero(this)" placeholder="Nombre de la app">
         </div>
     </div>
 
@@ -81,7 +80,7 @@
 
 
 
-  </fieldset>
+ 
   <br/>
 
 </#macro>

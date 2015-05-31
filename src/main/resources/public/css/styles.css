@@ -1,11 +1,36 @@
 body, input {
+	background-image: URL('http://www.technik-didaktik.com/wp-content/uploads/2014/12/Cloudy-Day-Simple.png');
         font-family: Calibri, Arial;
         margin: 0px;
         padding: 0px;
 }
 #header h2 {
         color: white;
-        background-color: #3275A8;
-        height: 40px;
+        background-color: #00BFFF;
+        height: 50px;
         padding: 5px 0 0 5px;
+}
+
+
+#footer p{color: white; font-size: large; text-align: center;
+	background-color: #00BFFF;
+}
+
+
+#header p {   color: white; font-size: large;
+        background-color: #00BFFF;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }

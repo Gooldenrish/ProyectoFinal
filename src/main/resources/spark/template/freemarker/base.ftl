@@ -26,8 +26,6 @@
 <ul class="nav nav-tabs">
   <li class="active"><a href="/index">Inicio</a></li>
   <li><a href="/add">Crear</a></li>
-  <li><a href="/edit">Editar</a></li>
-  <li><a href="/drop">drop</a></li>
 </ul>
 
     </div>

@@ -47,5 +47,16 @@ public class App {
                 return response;
             }
         });
+        
+           get(new FreeMarkerRoute("/drop/:titulo") {
+            @Override
+            public Object handle(Request request, Response response) {
+            DAO.MongoBD.borrar(request.params("titulo"));
+            response.redirect("/index");
+            return response;
+            }
+        });
+        
+        
     }
 }

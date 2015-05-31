@@ -1,4 +1,3 @@
-
 package DAO;
 
 import com.mongodb.BasicDBObject;
@@ -13,15 +12,16 @@ import java.util.ArrayList;
 import org.bson.Document;
 
 public class MongoBD {
-   static private MongoClient client = new MongoClient();
+
+    static private MongoClient client = new MongoClient();
+    static private MongoDatabase MongoBD = client.getDatabase("BD_app");
+    static private MongoCollection<Document> collection = MongoBD.getCollection("Aplicaciones");
 
     public static ArrayList getAllDocuments() {
-        MongoDatabase MongoBD = client.getDatabase("BD_app");
-        MongoCollection<Document> collection = MongoBD.getCollection("Aplicaciones");
         ArrayList<Obj_app> arrayl = new ArrayList();
         MongoCursor<Document> cursor = collection.find().iterator();
         try {
-            while (cursor.hasNext()) { 
+            while (cursor.hasNext()) {
                 arrayl.add(App(cursor.next()));
             }
         } finally {
@@ -29,7 +29,7 @@ public class MongoBD {
             return arrayl;
         }
     }
-      
+
     private static Obj_app App(Document dat) {
         Obj_app app = new Obj_app();
         app.setTitulo((dat.getString("titulo")));
@@ -40,7 +40,7 @@ public class MongoBD {
         app.setEnlace(dat.getString("enlace"));
         return app;
     }
-    
+
     public static void crear(Obj_app dat) {
         DB db = client.getDB("BD_app");
         DBCollection coll = db.getCollection("Aplicaciones");
@@ -53,6 +53,8 @@ public class MongoBD {
         coll.insert(doc);
     }
 
+    public static void borrar(String titulo) {
+        collection.deleteOne(new Document("titulo", titulo));
+    }
 
-    
 }

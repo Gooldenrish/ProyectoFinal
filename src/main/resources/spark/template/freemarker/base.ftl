@@ -24,17 +24,12 @@
     </H2>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="/">Inicio</a></li>
-  <li><a href="/new">Crear</a></li>
+  <li class="active"><a href="/index">Inicio</a></li>
+  <li><a href="/add">Crear</a></li>
   <li><a href="/edit">Editar</a></li>
   <li><a href="/drop">drop</a></li>
 </ul>
 
-
-<!---
-<a class="btn btn-success" href="/new" role="button">Nueva Aplicacion</a>
-<a class="btn btn-info" href="/edit" role="button">Editar Aplicacion</a>
--->
     </div>
 
     <div id="content">
@@ -42,7 +37,7 @@
     </div>
 
     <div id ="footer">
-        <p>Página realizada por profesor.asix@gmail.con usando Spark & Freemarker</p>
+        <p>Página realizada por Carlos usando Spark & Freemarker</p>
     </div>  
 
     </body>

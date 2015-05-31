@@ -9,7 +9,7 @@ package entidad;
  *
  * @author carlos
  */
-public class console {
+public class Obj_app {
    private String titulo;
    private String plataforma;
    private String idioma;
@@ -17,9 +17,9 @@ public class console {
    private String descripcion;
    private String enlace;
    
-   public console(){}
+   public Obj_app(){}
    
-   public console(String titulo, String plataforma, String idioma, Integer precio, String descripcion, String enlace){
+   public Obj_app(String titulo, String plataforma, String idioma, Integer precio, String descripcion, String enlace){
        this.titulo = titulo;
        this.plataforma = plataforma;
        this.idioma = idioma;

@@ -1,56 +1,51 @@
 package Main;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import spark.Request;
-import spark.Response;
 import spark.Route;
 import static spark.Spark.get;
 import static spark.Spark.post;
 import spark.template.freemarker.FreeMarkerRoute;
-import spark.ModelAndView;
-import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 import spark.Spark;
-import spark.Spark;
+import entidad.Obj_app;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+
+    public static void main(String[] args) {
         Spark.staticFileLocation("/public");
-        
-    	final ArrayList<User>users = new ArrayList<>();
 
-        get(new FreeMarkerRoute("/") {
+        get(new FreeMarkerRoute("/index") {
             @Override
-            public ModelAndView handle(Request request, Response response) {
-            	users.add(new User("Maria","Socorro"));
-            	users.add(new User("Elena","Garcia"));
-            	users.add(new User("Miguel","Gordillo"));
+            public Object handle(Request request, Response response) {
                 Map<String, Object> data = new HashMap<>();
-                data.put("users",users); 
-                
-            	return modelAndView(data, "userList.ftl");
+                data.put("Aplicaciones", DAO.MongoBD.getAllDocuments());
+                return modelAndView(data, "datos.ftl");
             }
         });
-        
-        
-           get(new FreeMarkerRoute("/new") {
+
+        get(new FreeMarkerRoute("/add") {
             @Override
-            public ModelAndView handle(Request request, Response response) {       
-            	return modelAndView(null, "new.ftl");
+            public Object handle(Request request, Response response) {
+                return modelAndView(null, "crear.ftl");
             }
         });
-        
-        
-        
+
+        post(new Route("/add") {
+            @Override
+            public Object handle(Request request, Response response) {
+                Obj_app add = new Obj_app();
+                add.setTitulo((request.queryParams("titulo")));
+                add.setPlataforma(request.queryParams("plataforma"));
+                add.setIdioma(request.queryParams("idioma"));
+                add.setPrecio(Integer.parseInt(request.queryParams("precio")));
+                add.setDescripcion(request.queryParams("descripcion"));
+                add.setEnlace(request.queryParams("enlace"));
+                DAO.MongoBD.crear(add);
+                response.redirect("/index");
+                return response;
+            }
+        });
     }
 }

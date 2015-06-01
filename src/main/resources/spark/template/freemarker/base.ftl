@@ -63,7 +63,7 @@ if (f.enlace.value   == '') { alert ('campo enlace vacío'); f.enlace.focus(); r
     </div>
 
     <div id ="footer">
-        <p>Página realizada por Carlos usando Spark & Freemarker</p>
+        <p>By <A HREF="https://github.com/Gooldenrish">Carlos Rivera</A></p>
     </div>  
 
     </body>

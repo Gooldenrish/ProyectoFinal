@@ -8,7 +8,7 @@
     <div class="form-group">
         <label class="control-label col-xs-3">Titulo:</label>
         <div class="col-xs-2">
-            <input type="text" name="titulo" class="form-control" placeholder="sin espacios">
+            <input type="text" name="titulo" class="form-control" placeholder="nombre de app">
         </div>
     </div>
 

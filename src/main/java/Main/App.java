@@ -25,6 +25,13 @@ public class App {
             }
         });
 
+        get(new FreeMarkerRoute("/") {
+            @Override
+            public Object handle(Request request, Response response) {
+                return modelAndView(null, "apertura.html");
+            }
+        });
+
         get(new FreeMarkerRoute("/add") {
             @Override
             public Object handle(Request request, Response response) {
